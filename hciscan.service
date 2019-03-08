@@ -1,0 +1,13 @@
+[Unit]
+Description=hciscan notification
+
+[Service]
+Environment=ENDPOINT=http://127.0.0.1:1880/ble
+PIDFile=/var/run/hciscan.pid
+User=root
+Group=root
+WorkingDirectory=/tmp
+ExecStart=/usr/local/sbin/hciscan
+
+[Install]
+WantedBy=multi-user.target
