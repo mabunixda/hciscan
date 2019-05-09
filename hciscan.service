@@ -2,12 +2,14 @@
 Description=hciscan notification
 
 [Service]
-Environment=ENDPOINT=http://127.0.0.1:1880/ble
+Environment=ENDPOINT=http://nodered.home.lan/smarthome/ble
 PIDFile=/var/run/hciscan.pid
 User=root
 Group=root
 WorkingDirectory=/tmp
 ExecStart=/usr/local/sbin/hciscan
+Restart=always
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
