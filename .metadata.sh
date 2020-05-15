@@ -41,7 +41,7 @@ export BINARY HBREPO MAINT VENDOR DESC GOLANGCI_LINT_ARGS CONFIG_FILE LICENSE FO
 # Provide a better URL if one exists.
 
 # Used for source links and wiki links.
-SOURCE_URL="https://bitbucket.com/${HBREPO}"
+SOURCE_URL="https://github.com/${HBREPO}"
 # Used for documentation links.
 URL="${SOURCE_URL}"
 

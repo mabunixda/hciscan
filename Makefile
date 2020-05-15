@@ -26,7 +26,7 @@ $(BINARY).amd64.exe: main.go
 
 
 docker:
-#	docker buildx create --name hciscan
+	# docker buildx create --name hciscan
 	docker buildx use hciscan
 	docker buildx inspect --bootstrap
 	docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7,linux/386 -t mabunixda/hciscan --push .

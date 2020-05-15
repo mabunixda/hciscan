@@ -17,7 +17,9 @@ ARG VERSION
 ARG BINARY
 
 RUN apt-get update -q \
-  && apt-get install -yq bluez-tools
+  && apt-get install -yq bluez-tools bluez \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/*
 
 ENV ENDPOINT=""
 
