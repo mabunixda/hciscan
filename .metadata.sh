@@ -10,9 +10,6 @@ declare -A annotate_map=(
     ["x86"]="386"
 )
 
-
-linux/386, linux/arm/v7, linux/arm/v6
-
 # Must match the repo name.
 BINARY="hciscan"
 # Github repo containing homebrew formula repo.
