@@ -24,8 +24,11 @@ $(BINARY).amd64.exe: main.go
 	# Building windows 64-bit x86 binary.
 	GOOS=windows GOARCH=amd64 go build -o $@ -ldflags "-w -s $(VERSION_LDFLAGS)"
 
-docker:
-	docker buildx create --name hciscan
+docker-context:
+	(docker buildx ls | grep ^hciscan > /dev/null ) && echo "buildx context exists" || docker buildx create --name hciscan
+
+
+docker: docker-context
 	docker buildx use hciscan
 	docker buildx inspect --bootstrap
 	docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7,linux/386 -t mabunixda/hciscan --push .
